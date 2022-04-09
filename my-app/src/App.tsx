@@ -32,6 +32,18 @@ function App() {
       }
     }
       ,[]);
+
+      function ReptileList() {
+        const reptiles = ["alligator", "snake", "lizard"];
+      
+        return (
+          <ol>
+            {reptiles.map((reptile) => (
+              <li>{reptile}</li>
+            ))}
+          </ol>
+        );
+      }
   
   return (
     <div className="App">
@@ -44,10 +56,14 @@ function App() {
   <ul className="list-unstyled">
     <li>{def.word}</li>
     <li>{def.phonetic}</li>
-    <li>{def.meanings[0].antonyms}</li>
-    <li>{def.meanings[0].definitions[0].defintion}</li>
+    <li>Synonym: {def.meanings[0].synonyms}</li>
+    <li>Antonym: {def.meanings[0].antonyms}</li>
+    <li>Definition: {def.meanings[0].definitions[0].definition}</li>
 
-      <li>Random Text</li>
+
+
+
+      {/* <li>Random Text</li>
     <li>Maybe your multiple definitions of the word are here?</li>
     <li>Structurally, it's still a list.</li>
     <li>
@@ -61,7 +77,7 @@ function App() {
         <li>and have appropriate left margin</li>
       </ul>
     </li>
-    <li>This may still come in handy in some situations.</li>
+    <li>This may still come in handy in some situations.</li> */}
     </ul>
     ))}
  </div>
