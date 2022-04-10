@@ -81,7 +81,8 @@ function App() {
     {def.meanings.map((meanings) => (
       <ul className="list-unstyled">
         {/* prints all parts of speech */}
-        <li>{meanings.partOfSpeech}</li>
+        <li><br></br></li> 
+        <li><b>{meanings.partOfSpeech}</b></li>
         <li><br></br></li>
         {meanings.definitions.map((definitions) => (
           <ul className="list-unstyled">
@@ -90,13 +91,12 @@ function App() {
             <li><br></br></li> 
           </ul>
     ))}
-    <li><br></br></li>
 
-    <li>Synonyms:</li>
+    <li><i>Synonyms:</i></li>
     <li>{meanings.synonyms.join(', ')}</li>
     <li><br></br></li>
 
-    <li>Antonyms:</li>
+    <li><i>Antonyms:</i></li>
     <li>{meanings.antonyms.join(', ')}</li>
     <li><br></br></li>
     
