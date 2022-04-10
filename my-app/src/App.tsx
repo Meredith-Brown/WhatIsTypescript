@@ -58,32 +58,48 @@ function App() {
     //     } );
     // } )
 
+    var arrayWord = def.map((def) => (
+      def.word
+    ))
+
   return (
     <div className="App">
 <main className="container">
 
 <div className="bg-light p-5 rounded">
-  <h1 className="defined">Definition</h1>
-  <p className="lead">Random Text</p>
+  <h1 className="defined">{arrayWord[0]}</h1>
+{def.map((def) => (
+  <p className="lead">{def.phonetic}</p>
+  ))}
   {def.map((def) => (
   <ul className="list-unstyled">
-    <li>{def.word}</li>
-    <li>{def.phonetic}</li>
-    <li>Part Of Speech: {def.meanings[0].partOfSpeech}</li>
+    {/* <li>Part Of Speech: {def.meanings[0].partOfSpeech}</li>
     <li>Definition: {def.meanings[0].definitions[0].definition}</li>
     <li>Synonym: {def.meanings[0].synonyms}</li>
     <li>Antonym: {def.meanings[0].antonyms}</li>
-    <li>Origin: {def.origin}</li>
+    <li>Origin: {def.origin}</li> */}
     {def.meanings.map((meanings) => (
       <ul className="list-unstyled">
         {/* prints all parts of speech */}
         <li>{meanings.partOfSpeech}</li>
+        <li><br></br></li>
         {meanings.definitions.map((definitions) => (
           <ul className="list-unstyled">
             {/* prints all definitions */}
-            <li>{definitions.definition}</li> 
+            <li>{definitions.definition}{"\n"}</li>
+            <li><br></br></li> 
           </ul>
-    ))} 
+    ))}
+    <li><br></br></li>
+
+    <li>Synonyms:</li>
+    <li>{meanings.synonyms.join(', ')}</li>
+    <li><br></br></li>
+
+    <li>Antonyms:</li>
+    <li>{meanings.antonyms.join(', ')}</li>
+    <li><br></br></li>
+    
       </ul>
     ))}
     </ul>
