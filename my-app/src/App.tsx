@@ -33,6 +33,31 @@ function App() {
     }
       ,[]);
 
+      // convert def.meanings[0].definitions to string
+        // for (let i = 0; i < def.length; i++) {
+        //     console.log(def[i]);
+        // }
+
+        // var arrString = def.map.toString();
+
+        // var arrString = def.values.toString;
+        // def.filter // between "" and contains definitions???
+        // var arr = def.splice(4,5);
+        // var str1 = arr[0];
+        // var str2 = arr[1];
+        // var str3 = arr[2];
+        // var str4 = arr[3];
+        // var str5 = arr[4];
+
+
+      // end experiment  
+
+    //   body: arr.map( function( row ) {
+    //     return row.map( function( cell ) { 
+    //         return foo( cell ); 
+    //     } );
+    // } )
+
   return (
     <div className="App">
 <main className="container">
@@ -49,6 +74,18 @@ function App() {
     <li>Synonym: {def.meanings[0].synonyms}</li>
     <li>Antonym: {def.meanings[0].antonyms}</li>
     <li>Origin: {def.origin}</li>
+    {def.meanings.map((meanings) => (
+      <ul className="list-unstyled">
+        {/* prints all parts of speech */}
+        <li>{meanings.partOfSpeech}</li>
+        {meanings.definitions.map((definitions) => (
+          <ul className="list-unstyled">
+            {/* prints all definitions */}
+            <li>{definitions.definition}</li> 
+          </ul>
+    ))} 
+      </ul>
+    ))}
     </ul>
     ))}
  </div>
